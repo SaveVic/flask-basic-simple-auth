@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+  Simple Auth - API
+{% endblock %} 
+
+{% block link %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='api.css') }}" />
+{% endblock %} 
+
+{% block body %}
+  <div class="container">
+    {% if g.users %}
+        <table>
+            <caption>User Count : {{ g.users|length }}</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in g.users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        
+    {% endif %}
+    
+  </div>
+{% endblock %}
