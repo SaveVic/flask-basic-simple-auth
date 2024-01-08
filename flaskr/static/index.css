@@ -1,0 +1,28 @@
+.container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.title {
+  font-size: 24pt;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn {
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+}
