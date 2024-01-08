@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% block title %} Login {% endblock %} 
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}" />
+{% endblock %} 
+
+{% block body %}
+  <div class="container">
+    <h1 class="title">Login</h1>
+    {% for message in get_flashed_messages() %}
+      <div class="msg">{{ message }}</div>
+    {% endfor %}
+    <form action="{{ url_for('auth.login') }}" method="post">
+      <input
+        id="username"
+        name="username"
+        type="text"
+        placeholder="Enter your username"
+        class="textbox"
+      />
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+        class="textbox"
+      />
+      <input type="submit" value="Sign In" class="btn" />
+    </form>
+  </div>
+{% endblock %}

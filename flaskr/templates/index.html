@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block title %} Simple Auth {% endblock %} 
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+{% endblock %} 
+
+{% block body %}
+  <div class="container">
+    <h1 class="title">
+      {% if g.user %} Hello, {{g.user.username}} 
+      {% else %} Simple Auth 
+      {% endif %}
+    </h1>
+    <div class="form">
+      {% if g.user %}
+        <a href="{{ url_for('auth.logout') }}" class="btn">Logout</a>
+      {% else %}
+        <a href="{{ url_for('auth.login') }}" class="btn">Login</a>
+        <a href="{{ url_for('auth.register') }}" class="btn">Register</a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

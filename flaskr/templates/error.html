@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+  Oops {% if g.error %} - {{ g.error.name }} {% endif %} 
+{% endblock %} 
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='error.css') }}" />
+{% endblock %} 
+
+{% block body %}
+  <div class="container">
+    <h1 class="title">Something wrong!</h1>
+    <p class="description">
+      {% if g.error %} 
+        {{ g.error.description }}
+        </br>
+        (Code : {{ g.error.code }}) 
+      {% else %} Please try again later. 
+      {% endif %}
+    </p>
+  </div>
+{% endblock %}
