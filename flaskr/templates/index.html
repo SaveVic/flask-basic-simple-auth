@@ -2,7 +2,7 @@
 
 {% block title %} Simple Auth {% endblock %} 
 
-{% block css %}
+{% block link %}
   <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
 {% endblock %} 
 
@@ -13,7 +13,14 @@
       {% else %} Simple Auth 
       {% endif %}
     </h1>
-    <div class="form">
+    {% if g.user %}
+      <div class="profile">
+        <h4>Id       : {{ g.user.id }}</h3>
+        <h4>Username : {{ g.user.username }}</h4>
+        <h4>Email    : {{ g.user.email }}</h4>
+      </div>
+    {% endif %}
+    <div class="actions">
       {% if g.user %}
         <a href="{{ url_for('auth.logout') }}" class="btn">Logout</a>
       {% else %}

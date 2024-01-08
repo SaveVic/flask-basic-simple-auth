@@ -2,7 +2,7 @@
 
 {% block title %} Login {% endblock %} 
 
-{% block css %}
+{% block link %}
   <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}" />
 {% endblock %} 
 
@@ -17,6 +17,7 @@
         id="username"
         name="username"
         type="text"
+        required
         placeholder="Enter your username"
         class="textbox"
       />
@@ -24,6 +25,7 @@
         id="password"
         name="password"
         type="password"
+        required
         placeholder="Enter your password"
         class="textbox"
       />

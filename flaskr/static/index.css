@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 56px;
+  gap: 40px;
   padding: 20px 35px;
   border-radius: 10px;
   box-shadow: 0 0 5px rgb(108, 108, 108);
@@ -13,11 +13,22 @@
   font-size: 24pt;
 }
 
-.form {
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile h4 {
+  font-size: 12pt;
+}
+
+.actions {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 20px;
 }
 
 .btn {
