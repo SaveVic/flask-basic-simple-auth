@@ -33,6 +33,10 @@ def create_app(test_config=None) -> Flask:
     def load_user():
         load_from_session()
 
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
     @app.route('/')
     def index():
         return render_template('index.html')
@@ -40,6 +44,6 @@ def create_app(test_config=None) -> Flask:
     @app.errorhandler(HTTPException)
     def handle_exception(e: HTTPException):
         g.error = e
-        return render_template('error.html')
+        return render_template('error.html'), e.code
 
     return app
