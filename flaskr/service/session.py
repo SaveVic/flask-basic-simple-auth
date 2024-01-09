@@ -13,8 +13,7 @@ def set_session(data: UserModel) -> None:
 
 
 def is_logged_in() -> bool:
-    id = session.get('id')
-    return id is not None
+    return g.get('user', None) is not None
 
 
 def load_from_session() -> None:
@@ -23,6 +22,7 @@ def load_from_session() -> None:
         return
     user = repo.get_one(id=id)
     if user is None:
+        clear_session()
         return
     g.user = user
 
