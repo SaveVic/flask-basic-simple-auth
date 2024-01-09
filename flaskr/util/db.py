@@ -27,5 +27,7 @@ def execute(func: Callable[[Session], T]) -> T:
 
 
 def dispose():
+    global __engine
     if __engine is not None:
         __engine.dispose()
+        __engine = None
