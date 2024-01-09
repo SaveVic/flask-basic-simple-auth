@@ -24,3 +24,8 @@ def execute(func: Callable[[Session], T]) -> T:
     with Session(_get_engine()) as db_sess:
         result = func(db_sess)
         return result
+
+
+def dispose():
+    if __engine is not None:
+        __engine.dispose()
