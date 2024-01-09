@@ -26,7 +26,7 @@ class Validator:
         value = self.__value
         msg = None
         if not isinstance(value, str) or value is None or value == '':
-            msg = f'Please fill out the form!'
+            msg = f'{str.capitalize(self.__field)} is required!'
         return self.__combine(msg)
 
     def is_email(self):
