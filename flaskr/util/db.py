@@ -15,7 +15,7 @@ def _get_engine():
     global __engine
     if __engine is None:
         path = current_app.config['DATABASE']
-        __engine = create_engine(f'sqlite:///{path}', echo=True)
+        __engine = create_engine(f'sqlite:///{path}', echo=False)
         init_db(__engine)
     return __engine
 
