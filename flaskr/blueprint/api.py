@@ -5,8 +5,8 @@ import flaskr.service.session as session_service
 bp = Blueprint('api', __name__, url_prefix='/api')
 
 
-@bp.route('/')
-def get_all():
+@bp.route('')
+def get_user_list():
     if not session_service.is_logged_in():
         return abort(404)
     users = rep.get_all()
