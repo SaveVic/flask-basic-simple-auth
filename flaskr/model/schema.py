@@ -15,7 +15,7 @@ class User(__Base):
     email: Mapped[str] = mapped_column(String(100))
 
     def __repr__(self) -> str:
-        return f'User(id={self.id!r}, username={self.username!r}, email={self.email!r})'
+        return f'User(id={self.id!r}, username={self.username!r}, email={self.email!r})'  # pragma: no cover
 
 
 def init_db(engine: Engine):

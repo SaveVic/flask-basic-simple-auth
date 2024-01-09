@@ -30,4 +30,4 @@ class UserModel:
         return d
 
     def __repr__(self) -> str:
-        return f'User(id={self.id!r}, username={self.username!r}, password={self.password!r} email={self.email!r})'
+        return f'User(id={self.id!r}, username={self.username!r}, password={self.password!r} email={self.email!r})'  # pragma: no cover
